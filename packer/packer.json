@@ -10,11 +10,11 @@
       "execute_command": "echo 'ubuntu' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'",
       "inline": [
           "sleep 30",
-          "apt-add-repository ppa:ansible/ansible -y",
+          "apt-add-repository -y ppa:ansible/ansible",
           "/usr/bin/apt-get update",
           "/usr/bin/apt-get -y install ansible",
           "mkdir /home/ubuntu/nodejs-app",
-          "chown ubuntu:ubuntu /home/ubuntu/nodejs-app"
+          "chown -R ubuntu:ubuntu /home/ubuntu/nodejs-app"
       ]
     }, {
       "type": "file",
@@ -27,7 +27,7 @@
     }, {
       "type": "shell",
       "inline": [
-        "mkdir /tmp/tests"
+        "mkdir -p /tmp/tests"
       ]
     }, {
         "type": "file",
